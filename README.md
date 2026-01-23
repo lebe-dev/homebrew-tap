@@ -1,18 +1,88 @@
-# Lebe-dev Tap
+# Lebe-dev Homebrew Tap
 
-## How do I install these formulae?
+Personal Homebrew tap with useful command-line tools and utilities.
 
-`brew install lebe-dev/tap/<formula>`
+## Available Formulas
 
-Or `brew tap lebe-dev/tap` and then `brew install <formula>`.
+### Submarine
 
-Or, in a `brew bundle` `Brewfile`:
+Tiny toolkit for LLM-powered subtitle translation workflows.
 
-```ruby
-tap "lebe-dev/tap"
-brew "<formula>"
+**Installation:**
+```bash
+brew install lebe-dev/tap/submarine
 ```
 
-## Documentation
+**Features:**
+- Get/set subtitles by index
+- Diagnose and fix SRT file issues
+- Compare and verify subtitle files
+- Track translation progress
+- Import/export in various formats
+- Adjust timestamps with delays
+- Mass rename subtitle files
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+**Usage:**
+```bash
+sm --help
+sm info your-subtitles.srt
+sm doctor --fix broken-subtitles.srt
+sm verify original.srt translated.srt
+```
+
+**Project:** [github.com/lebe-dev/submarine](https://github.com/lebe-dev/submarine)
+
+---
+
+## Installation Methods
+
+### Method 1: Direct Install
+```bash
+brew install lebe-dev/tap/<formula>
+```
+
+### Method 2: Tap First
+```bash
+brew tap lebe-dev/tap
+brew install <formula>
+```
+
+### Method 3: Using Brewfile
+Add to your `Brewfile`:
+```ruby
+tap "lebe-dev/tap"
+brew "submarine"
+```
+
+Then run:
+```bash
+brew bundle
+```
+
+## Updating Formulas
+
+```bash
+brew update
+brew upgrade lebe-dev/tap/<formula>
+```
+
+## Uninstalling
+
+```bash
+brew uninstall <formula>
+```
+
+To remove the tap completely:
+```bash
+brew untap lebe-dev/tap
+```
+
+## Development
+
+See [DEV.md](DEV.md) for information on developing and contributing to this tap.
+
+## Support
+
+For issues with specific formulas, please report them to the respective project repositories.
+
+For tap-related issues, open an issue at [github.com/lebe-dev/homebrew-tap](https://github.com/lebe-dev/homebrew-tap).
